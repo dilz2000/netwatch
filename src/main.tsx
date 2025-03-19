@@ -5,6 +5,7 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 import { TempoDevtools } from "tempo-devtools";
+import { WebSocketProvider } from "./services/websocket-provider.tsx";
 TempoDevtools.init();
 
 const basename = import.meta.env.BASE_URL;
@@ -12,7 +13,9 @@ const basename = import.meta.env.BASE_URL;
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter basename={basename}>
-      <App />
+      <WebSocketProvider>
+        <App />
+      </WebSocketProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
