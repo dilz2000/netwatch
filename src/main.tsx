@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
+import { WebSocketProvider } from "./lib/websocket";
 
 import { TempoDevtools } from "tempo-devtools";
 import { WebSocketProvider } from "./services/websocket-provider.tsx";
