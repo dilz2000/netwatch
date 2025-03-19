@@ -120,7 +120,7 @@ const Sidebar = ({ className = "" }: SidebarProps) => {
           onClick={() => setIsCollapsed(!isCollapsed)}
           className={cn(
             "rounded-lg p-1.5 text-muted-foreground hover:bg-accent hover:text-accent-foreground",
-            isCollapsed && "absolute right-2",
+            isCollapsed && "absolute right-2 top-5 z-10",
           )}
           aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
