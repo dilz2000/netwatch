@@ -151,8 +151,15 @@ export const WebSocketProvider = ({
             setLatestPacket(packetInfo);
 
             // Extract and update metrics
-            const pcapStats = packetInfo.pcap_stats || {};
-            const avgStats = packetInfo.avg_stats || {};
+            const pcapStats = packetInfo.pcap_stats || {
+              received: 0,
+              dropped_kernel: 0,
+              dropped_interface: 0,
+            };
+            const avgStats = packetInfo.avg_stats || {
+              packets_per_second: 0,
+              avg_packet_size: 0,
+            };
 
             const metricsUpdate: PacketMetrics = {
               packet_rate: Number(avgStats.packets_per_second || 0).toFixed(
